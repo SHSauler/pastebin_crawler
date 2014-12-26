@@ -57,7 +57,6 @@ excl_list   = ['video',
                'system information'
                'debug',         
                'log',
-               'log',
                'FAQ'
                'using',         # Filtering source-code
                'import',
@@ -103,14 +102,7 @@ def test_for_relevance(content):
                     keyword_list = []
     return keyword_list
     
-def ban_check(content):
-    if "banned" in content:
-        sys.stdout.write(color.red + "(Pastebin might have banned "\
-                         "us for too many downloads.)\n" + color.reset)
-        sys.stdout.write("(Please check!)\n")
-
 def save_as_file(name, content):
-    ban_check(content)
     sys.stdout.write("Testing pastebin.com/%s:" %name)
     keyword_list = test_for_relevance(content)
    
